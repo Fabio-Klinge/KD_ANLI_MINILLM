@@ -1,0 +1,194 @@
+Mon Apr 15 13:01:38 2024       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 530.30.02              Driver Version: 530.30.02    CUDA Version: 12.1     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                  Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf            Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA A100-SXM4-80GB           On | 00000000:C1:00.0 Off |                    0 |
+| N/A   27C    P0               58W / 500W|      0MiB / 81920MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+torchrun --nproc_per_node 1 --nnodes 1 --node_rank 0 --master_addr localhost --master_port 56535 /home/student/f/fklinge/share/bachelor/ichteste/LMOps/minillm//evaluate.py --base-path /home/student/f/fklinge/share/bachelor/ichteste/LMOps/minillm/ --model-path /home/student/f/fklinge/share/bachelor/ichteste/LMOps/minillm//checkpoints/t5-base/ --ckpt-name gpt2-large --n-gpu 1 --model-type gpt2 --data-dir /home/student/f/fklinge/share/bachelor/ichteste/LMOps/minillm//data/dolly/full/gpt2/ --data-names dolly --num-workers 0 --dev-num -1 --data-process-workers -1 --json-data --eval-batch-size 16 --max-length 512 --max-prompt-length 256 --do-eval --save /home/student/f/fklinge/share/bachelor/ichteste/LMOps/minillm//results/gpt2/eval_main/ --seed 10 --deepspeed --deepspeed_config /home/student/f/fklinge/share/bachelor/ichteste/LMOps/minillm//configs/deepspeed/ds_config.json --type eval_main --do-sample --top-k 0 --top-p 1.0 --temperature 1.0
+PYTHONPATH=/home/student/f/fklinge/share/bachelor/ichteste/LMOps/minillm/
+[2024-04-15 13:01:44,555] [INFO] [real_accelerator.py:133:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[nltk_data] Downloading package punkt to
+[nltk_data]     /home/student/f/fklinge/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+[nltk_data] Downloading package punkt to
+[nltk_data]     /home/student/f/fklinge/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+using world size: 1
+[2024-04-15 13:01:57,136] [WARNING] [comm.py:152:init_deepspeed_backend] NCCL backend in DeepSpeed not yet implemented
+[2024-04-15 13:01:57,137] [INFO] [comm.py:616:init_distributed] cdb=None
+[2024-04-15 13:01:57,137] [INFO] [comm.py:643:init_distributed] Initializing TorchBackend in DeepSpeed with backend nccl
+arguments:
+  model_path ................... /home/student/f/fklinge/share/bachelor/ichteste/LMOps/minillm//checkpoints/t5-base/
+  ckpt_name .................... gpt2-large
+  model_type ................... gpt2
+  teacher_model_type ........... None
+  n_gpu ........................ 1
+  n_nodes ...................... 1
+  teacher_model_path ........... None
+  teacher_ckpt_name ............ None
+  teacher_model_fp16 ........... False
+  model_parallel ............... False
+  model_parallel_size .......... None
+  no_value ..................... False
+  dropout_path_rate ............ None
+  fp32 ......................... False
+  type ......................... eval_main
+  do_train ..................... False
+  do_valid ..................... False
+  do_eval ...................... True
+  base_path .................... /home/student/f/fklinge/share/bachelor/ichteste/LMOps/minillm/
+  load ......................... None
+  save ......................... /home/student/f/fklinge/share/bachelor/ichteste/LMOps/minillm//results/gpt2/eval_main/dolly-512/gpt2-large/10
+  log_interval ................. 10
+  mid_log_num .................. 4
+  save_interval ................ 1000
+  eval_interval ................ 1000
+  local_rank ................... 0
+  save_additional_suffix ....... 
+  save_rollout ................. False
+  eb_sample_times .............. 3
+  data_dir ..................... /home/student/f/fklinge/share/bachelor/ichteste/LMOps/minillm//data/dolly/full/gpt2/
+  processed_data_dir ........... None
+  force_process ................ False
+  force_process_demo ........... False
+  data_process_workers ......... -1
+  train_num .................... -1
+  train_ratio .................. 1
+  dev_num ...................... -1
+  dev_ratio .................... 1
+  gen_num ...................... -1
+  data_names ................... dolly
+  prompt_type .................. None
+  num_workers .................. 0
+  max_prompt_length ............ 256
+  min_prompt_length ............ 128
+  json_data .................... True
+  bin_data ..................... False
+  txt_data ..................... False
+  prompt_data_dir .............. None
+  lm_data_dir .................. None
+  eval_ppl ..................... False
+  eval_rw ...................... False
+  eval_gen ..................... False
+  only_prompt .................. False
+  batch_size ................... 32
+  eval_batch_size .............. 16
+  clip_grad .................... 1.0
+  total_iters .................. None
+  train_iters_per_epoch ........ -1
+  max_length ................... 512
+  seed ......................... 10
+  seed_order ................... 42
+  seed_data .................... 42
+  seed_ppo ..................... 42
+  seed_lm ...................... 7
+  epochs ....................... None
+  training_epochs .............. 10000
+  gradient_accumulation_steps .. 1
+  gradient_checkpointing ....... False
+  attn_dtype ................... None
+  lr ........................... None
+  lr_min ....................... 1e-07
+  weight_decay ................. 0.01
+  loss_scale ................... 65536
+  kd_ratio ..................... None
+  warmup_iters ................. 0
+  lr_decay_iters ............... None
+  lr_decay_style ............... noam
+  scheduler_name ............... constant_trm
+  reward_scaling ............... None
+  cliprange_reward ............. 1
+  ppo_epochs ................... None
+  num_rollouts ................. 256
+  num_rollouts_per_device ...... None
+  cliprange .................... 0.2
+  chunk_size ................... None
+  gamma ........................ 0.95
+  length_norm .................. False
+  single_step_reg .............. False
+  teacher_mixed_alpha .......... None
+  lm_coef ...................... 1
+  top_k ........................ 0
+  top_p ........................ 1.0
+  do_sample .................... True
+  no_repeat_ngram_size ......... 6
+  repetition_penalty ........... None
+  num_beams .................... 1
+  temperature .................. 1.0
+  peft ......................... None
+  peft_lora_r .................. 8
+  peft_lora_alpha .............. 32
+  peft_lora_dropout ............ 0.1
+  peft_name .................... None
+  peft_path .................... None
+  teacher_peft_name ............ None
+  teacher_peft_path ............ None
+  deepspeed .................... True
+  deepspeed_config ............. /home/student/f/fklinge/share/bachelor/ichteste/LMOps/minillm//configs/deepspeed/ds_config.json
+  deepscale .................... False
+  deepscale_config ............. None
+  deepspeed_mpi ................ False
+  rank ......................... 0
+  world_size ................... 1
+OK
+Loading Data
+  0%|          | 0/1000 [00:00<?, ?it/s] 26%|██▌       | 255/1000 [00:00<00:00, 2546.82it/s] 51%|█████     | 510/1000 [00:00<00:00, 2464.54it/s] 76%|███████▌  | 757/1000 [00:00<00:00, 2435.22it/s]100%|██████████| 1000/1000 [00:00<00:00, 2422.21it/s]
+Load End
+Num instances: 1000
+Traceback (most recent call last):
+  File "/home/student/f/fklinge/share/bachelor/ichteste/LMOps/minillm//evaluate.py", line 104, in <module>
+    main()
+  File "/home/student/f/fklinge/share/bachelor/ichteste/LMOps/minillm//evaluate.py", line 93, in main
+    model = setup_model(args, ds_config, device)
+  File "/home/student/f/fklinge/share/bachelor/ichteste/LMOps/minillm//evaluate.py", line 28, in setup_model
+    model = get_model(args, device)
+  File "/share/users/student/f/fklinge/bachelor/ichteste/LMOps/minillm/utils.py", line 153, in get_model
+    model = AutoModelForCausalLM.from_pretrained(args.model_path, config=config, device_map={"": device}, torch_dtype=dtype)
+  File "/share/users/student/f/fklinge/bachelor/ichteste/LMOps/minillm/transformers/src/transformers/models/auto/auto_factory.py", line 569, in from_pretrained
+    raise ValueError(
+ValueError: Unrecognized configuration class <class 'transformers.models.t5.configuration_t5.T5Config'> for this kind of AutoModel: AutoModelForCausalLM.
+Model type should be one of BartConfig, BertConfig, BertGenerationConfig, BigBirdConfig, BigBirdPegasusConfig, BioGptConfig, BlenderbotConfig, BlenderbotSmallConfig, BloomConfig, CamembertConfig, LlamaConfig, CodeGenConfig, CpmAntConfig, CTRLConfig, Data2VecTextConfig, ElectraConfig, ErnieConfig, FalconConfig, FuyuConfig, GitConfig, GPT2Config, GPT2Config, GPTBigCodeConfig, GPTNeoConfig, GPTNeoXConfig, GPTNeoXJapaneseConfig, GPTJConfig, LlamaConfig, MarianConfig, MBartConfig, MegaConfig, MegatronBertConfig, MistralConfig, MptConfig, MusicgenConfig, MvpConfig, OpenLlamaConfig, OpenAIGPTConfig, OPTConfig, PegasusConfig, PersimmonConfig, PhiConfig, PLBartConfig, ProphetNetConfig, QDQBertConfig, ReformerConfig, RemBertConfig, RobertaConfig, RobertaPreLayerNormConfig, RoCBertConfig, RoFormerConfig, RwkvConfig, Speech2Text2Config, TransfoXLConfig, TrOCRConfig, WhisperConfig, XGLMConfig, XLMConfig, XLMProphetNetConfig, XLMRobertaConfig, XLMRobertaXLConfig, XLNetConfig, XmodConfig.
+ERROR:torch.distributed.elastic.multiprocessing.api:failed (exitcode: 1) local_rank: 0 (pid: 181872) of binary: /home/student/f/fklinge/.conda/envs/test3/bin/python
+Traceback (most recent call last):
+  File "/home/student/f/fklinge/.conda/envs/test3/bin/torchrun", line 8, in <module>
+    sys.exit(main())
+  File "/home/student/f/fklinge/.conda/envs/test3/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 346, in wrapper
+    return f(*args, **kwargs)
+  File "/home/student/f/fklinge/.conda/envs/test3/lib/python3.9/site-packages/torch/distributed/run.py", line 794, in main
+    run(args)
+  File "/home/student/f/fklinge/.conda/envs/test3/lib/python3.9/site-packages/torch/distributed/run.py", line 785, in run
+    elastic_launch(
+  File "/home/student/f/fklinge/.conda/envs/test3/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 134, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/student/f/fklinge/.conda/envs/test3/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 250, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/home/student/f/fklinge/share/bachelor/ichteste/LMOps/minillm//evaluate.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2024-04-15_13:02:02
+  host      : hpc3-53.hpc
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 181872)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

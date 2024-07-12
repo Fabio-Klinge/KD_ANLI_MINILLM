@@ -1,0 +1,57 @@
+Thu Jun 20 23:57:30 2024       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 530.30.02              Driver Version: 530.30.02    CUDA Version: 12.1     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                  Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf            Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA A100-SXM4-80GB           On | 00000000:C1:00.0 Off |                    0 |
+| N/A   26C    P0               58W / 500W|      0MiB / 81920MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+[2024-06-20 23:57:34,956] [INFO] [real_accelerator.py:133:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+OK
+10
+/share/users/student/f/fklinge/bachelor/ichteste/LMOps/minillm/data/anli/
+/share/users/student/f/fklinge/bachelor/ichteste/LMOps/minillm/data/anli/, plain_text/*.parquet
+Number of lines: 169265
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Processed 0 documents. 1 instances. (0.0 docs/s, 6.07819968587864e-06 MB/s).
+########## r1 dev ##########
+Data num 9
+Prompt lengths. Mean: 174.11111111111111 Max: 187 Min: 160
+Response Mean: 36.77777777777778 Max: 95 Min: 12
+[2024-06-20 23:57:51,530] [INFO] [real_accelerator.py:133:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+OK
+10
+/share/users/student/f/fklinge/bachelor/ichteste/LMOps/minillm/data/anli/
+/share/users/student/f/fklinge/bachelor/ichteste/LMOps/minillm/data/anli/, plain_text/*.parquet
+Number of lines: 169265
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Processed 0 documents. 1 instances. (0.0 docs/s, 5.264353457114076e-06 MB/s).
+########## r1 dev ##########
+Data num 9
+Prompt lengths. Mean: 174.11111111111111 Max: 187 Min: 160
+Response Mean: 36.77777777777778 Max: 95 Min: 12

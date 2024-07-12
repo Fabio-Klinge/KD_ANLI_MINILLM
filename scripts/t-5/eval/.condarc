@@ -1,0 +1,4 @@
+proxy_servers: 
+	http: http://rhn-proxy.rz.uos.de:3128 
+	https: http://rhn-proxy.rz.uos.de:3128 
+ssl_verify: false
